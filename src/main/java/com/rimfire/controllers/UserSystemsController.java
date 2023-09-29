@@ -1,5 +1,7 @@
 package com.rimfire.controllers;
 
+import java.util.List;
+
 import com.rimfire.entities.UserSystems;
 import com.rimfire.repositories.UserSystemsRepository;
 import io.micronaut.http.annotation.Controller;
@@ -19,4 +21,10 @@ public class UserSystemsController {
     public Iterable<UserSystems> getUserSystems() {
         return userSystemsRepository.findAll();
     }
+
+    @Get("/userSystems/{userId}")
+    public List<UserSystems> findByUserId(Long userId) {
+        return userSystemsRepository.findByUserId(userId);
+    }   
+
 }
