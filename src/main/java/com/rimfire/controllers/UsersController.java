@@ -17,15 +17,14 @@ public class UsersController {
     @Inject
     private UsersRepository usersRepository;
 
-    // @Inject
-    // private UserRoleRepository userRoleRepository;
-
-    // @Inject
-    // private UserSystemRepository userSystemRepository;
-
     @Get("/users")
     public Iterable<Users> getUsers() {
         return usersRepository.findAll();
+    }
+
+    @Get("/users/{userId}")
+    public Users findByUserId(Long userId) {
+        return usersRepository.findByUserId(userId);
     }
   
 }

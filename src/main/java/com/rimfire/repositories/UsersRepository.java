@@ -8,5 +8,6 @@ import io.micronaut.data.repository.CrudRepository;
 
 @JdbcRepository(dialect = Dialect.ORACLE)
 public interface UsersRepository extends CrudRepository<Users, Long> {
+    Users findByUserId(Long userId);
 }
 
